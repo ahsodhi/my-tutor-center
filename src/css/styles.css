@@ -1,0 +1,162 @@
+.topbar a {
+  color: #777;
+}
+.topbar a:hover, .topbar a:focus {
+  text-decoration: none;
+  color: #333;
+}
+.topbar {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #eee;
+}
+.topbar-right {
+  font-size: 20px;
+  display: flex;
+  flex-basis: 50%;
+}
+.topbar-right ul {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  justify-content: space-between;
+  height: 100%;
+}
+.topbar-right ul li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: inherit;
+  padding: 0px 20px;
+  color: #222;
+}
+.topbar-right ul li.link-active {
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.topbar-right ul li.link-active a {
+  color: #333;
+}
+.brand-name {
+  font-size: 30px;
+}
+/**/
+.page-content {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+/**/
+.flex-header {
+  display: flex;
+  flex-direction: row;
+}
+.flex-header .filter-bar {
+  max-width: 400px;
+  margin-left: 30px;
+  align-self: center;
+}
+/**/
+.subject-list {
+  display: flex;
+  max-height: 500px;
+  flex-direction: column;
+  max-width: 20%;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+.subject-list-item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+/**/
+.table-hover {
+  margin-top: 20px;
+}
+td, th {
+  padding: 5px 20px;
+}
+/**/
+select[multiple] {
+  height: auto;
+}
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form {
+  padding-left: 10px;
+  flex-grow: 1;
+  flex-basis: 20%;
+  max-width: 30%;
+}
+.inline-form {
+  display: flex;
+  flex-direction: row;
+}
+.inline-form .lbl {
+  width: 50px;
+  align-self: center;
+}
+.form2 {
+  flex-grow: 1;
+  flex-basis: 20%;
+  max-width: 30%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+}
+.sub-form2 {
+  padding-left: 20px;
+}
+.form3 {
+  padding-left: 20px;
+  flex-grow: 1;
+  max-height: 500px;
+}
+.form-header {
+  display: flex;
+  flex-direction: row;
+}
+.form-header .btn {
+  height: 50%;
+  margin-left: 15px;
+  align-self: flex-end;
+}
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.checkboxes div {
+  padding: 10px;
+}
+/**/
+.logo {
+  width: 75;
+  height: 75px;
+  margin-right: 20px;
+}
+/**/
+.time-slots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.time-slots .slot {
+  padding: 10px;
+}
+/**/
+.student-event {
+  background-color: 'red';
+}
