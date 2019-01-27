@@ -110,11 +110,11 @@ class InvoiceModal extends Component {
               doc.setFontSize(18);
               doc.text(date.substr(0,16), 150, 75);
               doc.setFontSize(24);
-              doc.text('Shaily Tutorials', 15, 15);
+              doc.text('Awesome Tutors', 15, 15);
               doc.setFontSize(18);
-              doc.text(['A7 - 200 County Court Blvd.',
-                        'Brampton, ON, L6W 4K7',
-                        'Ph.: 905-488-9948'],15,25);
+              doc.text(['220 Baker Street.',
+                        'Guelph ON, N1L 2M4',
+                        'Ph.: 647-888-9978'],15,25);
               doc.setFontStyle('bold');
               const clientInfo = this.getClientInfo();
               const packInfo = this.getPackInfo();
