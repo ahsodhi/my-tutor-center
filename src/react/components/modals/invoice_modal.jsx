@@ -80,7 +80,7 @@ class InvoiceModal extends Component {
   }
   getPaymentsInfo() {
     const {payments} = this.state.data;
-    const index = payments.findIndex(p => p.schedule = this.props.schedule._id);
+    const index = payments.findIndex(p => p.schedule == this.props.schedule._id);
     const payment = payments[index];
     const content = [];
     let totalPaid = 0;
