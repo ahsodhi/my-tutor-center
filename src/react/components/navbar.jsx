@@ -13,7 +13,7 @@ class NavBar extends Component {
             <Link to='/profile' className="brand-name">
               <div>
                 <img src='logo.png' className='logo' />
-                Shaily Tutorials
+                Awesome Tutors
               </div>
             </Link>
           </div>
