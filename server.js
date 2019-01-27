@@ -14,9 +14,10 @@ mongoose.connect('mongodb://admin:APOORVA1@ds157682.mlab.com:57682/shailytutoria
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'src')))
+app.use(express.static(path.join(__dirname, 'src')));
 app.use(bodyParser.json());
 
+app.use('/favicon.ico', express.static(path.join(__dirname, 'src/logo.ico')));
 app.use('/api/clients', Helpers.createRoutes(clientModel));
 app.use('/api/packages', Helpers.createRoutes(packageModel));
 app.use('/api/teachers', Helpers.createRoutes(teacherModel));
