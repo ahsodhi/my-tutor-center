@@ -17,6 +17,20 @@ var app = express();
 app.use(express.static(path.join(__dirname, 'src')));
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+    const auth = {login: 'anirudh', password: 'password23'}
+  
+    const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
+    const [login, password] = new Buffer(b64auth, 'base64').toString().split(':')
+  
+    if (!login || !password || login !== auth.login || password !== auth.password) {
+      res.set('WWW-Authenticate', 'Basic realm="401"')
+      res.status(401).send('Authentication required.')
+      return
+    }
+    next()  
+  })
+
 app.use('/favicon.ico', express.static(path.join(__dirname, 'src/logo.ico')));
 app.use('/api/clients', Helpers.createRoutes(clientModel));
 app.use('/api/packages', Helpers.createRoutes(packageModel));
