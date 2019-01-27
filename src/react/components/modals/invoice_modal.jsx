@@ -105,16 +105,15 @@ class InvoiceModal extends Component {
             if (this.state.data) {
               const doc = new jsPDF('portrait','mm','letter');
               const image = LOGO;
-              doc.addImage(image, 'JPEG', 150, 15, 50, 50);
-              const date = new Date(Date.now()).toUTCString();
-              doc.setFontSize(18);
-              doc.text(date.substr(0,16), 150, 75);
+              doc.addImage(image, 'JPEG', 150, 5, 50, 50);
+              const date = new Date(Date.now()).toUTCString();              
               doc.setFontSize(24);
-              doc.text('Awesome Tutors', 15, 15);
+              doc.text('MyTutor Center', 15, 15);
               doc.setFontSize(18);
               doc.text(['220 Baker Street.',
                         'Guelph ON, N1L 2M4',
-                        'Ph.: 647-888-9978'],15,25);
+                        'Ph.: 647-888-9978','\n',
+                        date.substr(0,16)],15,25);
               doc.setFontStyle('bold');
               const clientInfo = this.getClientInfo();
               const packInfo = this.getPackInfo();
@@ -128,21 +127,21 @@ class InvoiceModal extends Component {
               const {paymentInfo,totalPaid} = this.getPaymentsInfo();
               const balanceDue = (price-totalPaid).toLocaleString(undefined, {currency:'USD',style:'currency'});
               console.log(clientInfo);
-              doc.text(clientInfo,15,60);
+              doc.text(clientInfo,15,70);
               doc.setFontStyle('normal');
               console.log('pack info');
-              doc.text([packInfo[0],packInfo[1],`${packPrice} ${period[packInfo[3]]}`],15,90);
-              doc.text(`From ${startDateString} to ${endDateString}`,15,120);
-              doc.text(`${hours} Hours`,15,130);
-              doc.text(`Cost: ${priceString}`,15,140);
+              doc.text([packInfo[0],packInfo[1],`${packPrice} ${period[packInfo[3]]}`],15,100);
+              doc.text(`From ${startDateString} to ${endDateString}`,15,130);
+              doc.text(`${hours} Hours`,15,140);
+              doc.text(`Cost: ${priceString}`,15,150);
               let offset = 0;
               console.log(paymentInfo);
               paymentInfo.forEach((payment,i) => {
                 const payDate = new Date(Date.parse(payment.date)).toUTCString().substr(5,11);
                 const payAmount = payment.amount.toLocaleString(undefined, {currency:'USD',style:'currency'});
-                doc.text(`Payment by ${payMethods[payment.method-1]} on ${payDate}`,15,160+(10*i));
-                doc.text(`${payAmount}`,160,160+(10*i));
-                offset = 160 + 10 * (i+2);
+                doc.text(`Payment by ${payMethods[payment.method-1]} on ${payDate}`,15,170+(10*i));
+                doc.text(`${payAmount}`,160,170+(10*i));
+                offset = 170 + 10 * (i+2);
               });
               doc.text(`Balance Due:`,15,offset);
               doc.text(`${balanceDue}`,160,offset);
