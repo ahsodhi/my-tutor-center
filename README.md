@@ -1,1 +1,1 @@
-# my-tutor-center
+# MyTutor Center
