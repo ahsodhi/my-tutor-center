@@ -34,12 +34,9 @@
   padding: 0px 20px;
   color: #222;
 }
-.topbar-right ul li.link-active {
-  background-color: #ccc;
-  border-radius: 50%;
-}
 .topbar-right ul li.link-active a {
   color: #333;
+  font-weight: bold;
 }
 .brand-name {
   font-size: 30px;

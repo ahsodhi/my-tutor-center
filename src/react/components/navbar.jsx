@@ -21,8 +21,8 @@ class NavBar extends Component {
             <ul>
               <li className={pathname.includes('client')?'link-active':''}><Link to='/clients'>Clients</Link></li>
               <li className={pathname.includes('teacher')?'link-active':''}><Link to='/teachers'>Teachers</Link></li>
+              <li className={pathname.includes('schedule')?'link-active':''}><Link to='/schedules'>Schedules/Invoices</Link></li>
               <li className={pathname.includes('subject')?'link-active':''}><Link to='/subjects'>Subjects</Link></li>
-              <li className={pathname.includes('schedule')?'link-active':''}><Link to='/schedules'>Schedules & Invoice</Link></li>
               <li className={pathname.includes('package')?'link-active':''}><Link to='/packages'>Packages</Link></li>
             </ul>
           </div>

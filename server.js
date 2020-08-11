@@ -9,8 +9,8 @@ var { teacherModel, packageModel, clientModel, subjectModel, scheduleModel, paym
 var paymentRoutes = require('./routes/payment_routes'),
     scheduleRoutes = require('./routes/schedule_routes');
 
-var DB_URL = process.env.DB_URL || 'mongodb://localhost:27017/shaily';
-mongoose.connect('mongodb://admin:APOORVA1@ds157682.mlab.com:57682/shailytutorials');
+var DB_URL = process.env.DB_URL || 'mongodb://localhost:27017/mytutor-center';
+mongoose.connect(DB_URL);
 
 var app = express();
 
@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'src')));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    const auth = {login: 'anirudh', password: 'password23'}
+    const auth = {login: 'anirudh', password: 'password123'}
   
     const b64auth = (req.headers.authorization || '').split(' ')[1] || ''
     const [login, password] = new Buffer(b64auth, 'base64').toString().split(':')

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Heading from '../heading.jsx';
 import GetRequest from '../../utils/get_request';
 import FormRequest from '../../utils/form_request';
+import FilterBar from '../filter_bar.jsx';
 
 class Teachers extends Component {
   constructor(props) {
@@ -43,7 +44,10 @@ class Teachers extends Component {
     return (
       <div>
         <Heading text='Teachers'/>
-        <Link to='/add_teacher'><button className='btn btn-default'>Add New Teacher</button></Link>
+        <div className="flex-header">
+          <Link to='/add_teacher'><button className='btn btn-default'>Add New Teacher</button></Link>
+          <FilterBar ref='filterBar' classProp='filter-bar'/>
+        </div>
         {
           this.state.teachers.length == 0 ?
           <h4><i>No teachers added</i></h4> :

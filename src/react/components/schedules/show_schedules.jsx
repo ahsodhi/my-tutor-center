@@ -7,6 +7,7 @@ import Heading from '../heading.jsx';
 import GetRequest from '../../utils/get_request';
 import FormRequest from '../../utils/form_request';
 import {InvoiceModal} from '../modals';
+import FilterBar from '../filter_bar.jsx';
 
 class Lessons extends Component {
   constructor(props) {
@@ -81,7 +82,10 @@ class Lessons extends Component {
           schedule={schedules[selectedIndex]}
         />
         <Heading text='Schedules'/>
-        <Link to='/add_schedule'><button className='btn btn-default'>Add Schedule</button></Link>
+        <div className="flex-header">
+          <Link to='/add_schedule'><button className='btn btn-default'>Add Schedule</button></Link>
+          <FilterBar ref='filterBar' classProp='filter-bar'/>
+        </div>
         {
           this.state.schedules.length == 0 ?
           <h4><i>No schedules added</i></h4> :

@@ -26,7 +26,7 @@ class FilterBar extends Component {
       <div className={this.props.classProp}>
         <div className='input-group'>
           <span className='input-group-addon'><i className="fa fa-search" aria-hidden="true"></i></span>
-          <input type='text' className='form-control' placeholder='Filter Resutls...'
+          <input type='text' className='form-control' placeholder='Filter Results...'
             value={this.state.query}
             onChange={e => { this.setState({ query: e.target.value })}}
           />
