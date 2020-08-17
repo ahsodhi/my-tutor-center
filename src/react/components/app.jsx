@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 import NavBar from './navbar.jsx';
 import Profile from './profile/edit_profile.jsx';
@@ -15,6 +15,7 @@ class App extends Component {
       <div>
         <NavBar history={this.props.history}/>
         <div className='page-content'>
+          <Route exact path='/' render={() => <Redirect to='/clients' />} />
           <Route path='/profile' component={Profile}/>
 
           <Route path='/clients' component={Clients}/>
