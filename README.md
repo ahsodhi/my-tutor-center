@@ -12,7 +12,7 @@ MyTutor Center is a full stack web application for streamlining your tutoring bu
 
 ## Heroku Deployment
 
-You may interact with the live deployed Heroku version of this app by going to this link: https://goo.gl/qyot3j and using the following login credentials.
+You may interact with the live deployed Heroku version of this app by going to this link: https://mytutorcenter.herokuapp.com and using the following login credentials.
 
 **Username:** *anirudh*  
 **Password:** *password123*
